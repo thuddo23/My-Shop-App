@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_margin="@dimen/padding_margin_3xs"
+    android:padding="@dimen/padding_margin_m">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_cart_item"
+        android:layout_width="@dimen/img_cart_item_size"
+        android:layout_height="@dimen/img_cart_item_size"
+        android:src="@drawable/ic_baseline_save_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.myshop.utils.font.RegularTextView
+        android:id="@+id/txt_title_cart_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_m"
+        android:text="fefwefew"
+        android:layout_marginStart="@dimen/padding_margin_xs"
+        android:textSize="@dimen/text_size_s"
+        app:layout_constraintStart_toEndOf="@id/img_cart_item"
+        app:layout_constraintTop_toTopOf="@id/img_cart_item" />
+
+    <com.example.myshop.utils.font.BoldTextView
+        android:id="@+id/txt_prices_cart_item"
+        android:layout_width="@dimen/component_size_3xl"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_m"
+        android:textSize="@dimen/text_size_xs"
+        app:layout_constraintStart_toStartOf="@id/txt_title_cart_item"
+        app:layout_constraintTop_toBottomOf="@id/txt_title_cart_item" />
+
+    <ImageView
+        android:id="@+id/img_delete_cart_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding_margin_2xs"
+        android:padding="@dimen/padding_margin_2xs"
+        android:src="@drawable/ic_baseline_delete_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img_cart_item" />
+
+    <ImageView
+        android:id="@+id/img_add_cart_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding_margin_2xs"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="@id/txt_prices_cart_item"
+        app:layout_constraintEnd_toEndOf="@id/img_delete_cart_item"
+        app:layout_constraintTop_toTopOf="@id/txt_prices_cart_item" />
+
+    <com.example.myshop.utils.font.RegularTextView
+        android:id="@+id/txt_cart_item_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding_margin_xs"
+        android:background="@drawable/txt_stock_quantity_background"
+        android:paddingHorizontal="@dimen/padding_margin_m"
+        android:paddingVertical="@dimen/padding_margin_2xs"
+        android:text="1"
+        android:textSize="@dimen/text_size_xs"
+        app:layout_constraintBottom_toBottomOf="@id/txt_prices_cart_item"
+        app:layout_constraintEnd_toStartOf="@id/img_add_cart_item"
+        app:layout_constraintTop_toTopOf="@id/txt_prices_cart_item" />
+
+    <ImageView
+        android:id="@+id/img_minus_cart_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding_margin_xs"
+        android:src="@drawable/ic_baseline_remove_24"
+        app:layout_constraintBottom_toBottomOf="@id/txt_prices_cart_item"
+        app:layout_constraintEnd_toStartOf="@id/txt_cart_item_quantity"
+        app:layout_constraintTop_toTopOf="@id/txt_prices_cart_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

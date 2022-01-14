@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.ProductDetailsActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_product_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_gradient">
+
+            <com.example.myshop.utils.font.BoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Product Details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_m" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_product_details"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/img_product_size"
+            android:background="@color/light_divider_color" />
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:id="@+id/txt_title_product_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_margin_m"
+            android:layout_marginTop="@dimen/padding_margin_l"
+            android:text="title"
+            android:textSize="@dimen/text_size_s" />
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:id="@+id/txt_prices_product_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_margin_m"
+            android:drawableStart="@drawable/ic_baseline_attach_money_24"
+            android:textSize="@dimen/text_size_xs" />
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_margin_m"
+            android:layout_marginTop="@dimen/padding_margin_2xl"
+            android:text="@string/product_description"
+            android:textSize="@dimen/text_size_s" />
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:id="@+id/txt_description_product_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_margin_m"
+            android:textSize="@dimen/text_size_xs" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_margin_l"
+            android:orientation="horizontal">
+
+            <com.example.myshop.utils.font.RegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_margin_m"
+                android:text="@string/stock_quantity"
+                android:textSize="@dimen/text_size_s" />
+
+            <com.example.myshop.utils.font.RegularTextView
+                android:id="@+id/txt_stock_quantity_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_margin_m"
+                android:background="@drawable/txt_stock_quantity_background"
+                android:paddingHorizontal="@dimen/padding_margin_xl"
+                android:paddingVertical="@dimen/padding_margin_xs"
+                android:textSize="@dimen/text_size_xs" />
+        </LinearLayout>
+
+        <com.example.myshop.utils.font.BoldButton
+            android:id="@+id/btn_add_to_cart_product_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_margin_2xl"
+            android:layout_marginTop="@dimen/padding_margin_3xl"
+            android:background="@drawable/button_background"
+            android:text="@string/btn_add_to_cart"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:textSize="@dimen/text_size_m" />
+
+        <com.example.myshop.utils.font.BoldButton
+            android:id="@+id/btn_move_to_cart_product_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_margin_2xl"
+            android:layout_marginTop="@dimen/padding_margin_3xl"
+            android:background="@drawable/button_background"
+            android:text="@string/btn_move_to_cart"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:textSize="@dimen/text_size_m" />
+
+    </LinearLayout>
+</layout>

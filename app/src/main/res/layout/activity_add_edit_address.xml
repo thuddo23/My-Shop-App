@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.AddEditAddressActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_add_edit_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.example.myshop.utils.font.BoldTextView
+                android:id="@+id/title_toolbar_edit_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/add_address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_m" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_margin_s"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_add_edit_address">
+
+            <com.example.myshop.font.RegularEditText
+                android:id="@+id/edit_full_name_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_margin_l"
+                android:background="@drawable/edit_text_background"
+                android:hint="@string/full_name"
+                android:paddingHorizontal="@dimen/padding_margin_xs"
+                android:paddingVertical="@dimen/padding_margin_m"
+                android:textSize="@dimen/text_size_xs" />
+
+            <com.example.myshop.font.RegularEditText
+                android:id="@+id/edit_phone_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_margin_2xl"
+                android:background="@drawable/edit_text_background"
+                android:hint="@string/phone_number"
+                android:paddingHorizontal="@dimen/padding_margin_xs"
+                android:paddingVertical="@dimen/padding_margin_m"
+                android:textSize="@dimen/text_size_xs" />
+
+            <com.example.myshop.font.RegularEditText
+                android:id="@+id/edit_address_add_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_margin_2xl"
+                android:background="@drawable/edit_text_background"
+                android:hint="@string/address"
+                android:paddingHorizontal="@dimen/padding_margin_xs"
+                android:paddingVertical="@dimen/padding_margin_m"
+                android:textSize="@dimen/text_size_xs" />
+
+            <com.example.myshop.font.RegularEditText
+                android:id="@+id/edit_zipcode_add_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_margin_2xl"
+                android:background="@drawable/edit_text_background"
+                android:hint="@string/zip_code"
+                android:paddingHorizontal="@dimen/padding_margin_xs"
+                android:paddingVertical="@dimen/padding_margin_m"
+                android:textSize="@dimen/text_size_xs" />
+
+            <com.example.myshop.font.RegularEditText
+                android:id="@+id/edit_additional_note_add_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_margin_xl"
+                android:background="@drawable/edit_text_background"
+                android:hint="@string/additional_note"
+                android:paddingHorizontal="@dimen/padding_margin_xs"
+                android:paddingVertical="@dimen/padding_margin_m"
+                android:textSize="@dimen/text_size_xs" />
+
+
+            <RadioGroup
+                android:id="@+id/radio_gr_add_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/padding_margin_l"
+                android:orientation="horizontal">
+
+                <com.example.myshop.utils.font.CustomRadioButton
+                    android:id="@+id/btn_home_add_address"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/component_size_m"
+                    android:layout_marginEnd="@dimen/padding_margin_3xs"
+                    android:layout_weight="1"
+                    android:background="@drawable/gender_tab_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="@string/home"
+                    android:textColor="@drawable/gender_tab_text_color_selector"
+                    android:textSize="@dimen/text_size_xs"
+                    android:textStyle="bold" />
+
+                <com.example.myshop.utils.font.CustomRadioButton
+                    android:id="@+id/btn_office_add_address"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/component_size_m"
+                    android:layout_marginHorizontal="@dimen/padding_margin_3xs"
+                    android:layout_weight="1"
+                    android:background="@drawable/gender_tab_selector"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:text="@string/office"
+                    android:textColor="@drawable/gender_tab_text_color_selector"
+                    android:textSize="@dimen/text_size_xs"
+                    android:textStyle="bold" />
+
+                <com.example.myshop.utils.font.CustomRadioButton
+                    android:id="@+id/btn_other_add_address"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/component_size_m"
+                    android:layout_marginEnd="@dimen/padding_margin_3xs"
+                    android:layout_weight="1"
+                    android:background="@drawable/gender_tab_selector"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:text="@string/other"
+                    android:textColor="@drawable/gender_tab_text_color_selector"
+                    android:textSize="@dimen/text_size_xs"
+                    android:textStyle="bold" />
+
+
+            </RadioGroup>
+
+            <com.example.myshop.font.RegularEditText
+                android:id="@+id/edit_other_details_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:hint="@string/other_details"
+                android:paddingHorizontal="@dimen/padding_margin_xs"
+                android:paddingVertical="@dimen/padding_margin_m"
+                android:textSize="@dimen/text_size_xs"
+                android:visibility="gone" />
+
+
+            <com.example.myshop.utils.font.BoldButton
+                android:id="@+id/btn_submit_add_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_margin_3xs"
+                android:layout_marginVertical="@dimen/padding_margin_l"
+                android:background="@drawable/button_background"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_s" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

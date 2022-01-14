@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".activities.RegisterActivity"
+                android:padding="@dimen/padding_margin_l">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_margin_m"
+                    >
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/toolbar_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:padding="0dp"
+                        android:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                <com.example.myshop.utils.font.BoldTextView
+                        android:id="@+id/txt_title_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/create_acc"
+                        android:textSize="@dimen/padding_margin_l"
+                        android:gravity="center"
+                        android:textColor="@color/primary_text"
+                        android:layout_gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_first_name_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_xs"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/first_name"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:layout_marginVertical="@dimen/padding_margin_m"/>
+
+            <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_last_name_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_xs"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/last_name"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:layout_marginVertical="@dimen/padding_margin_m"/>
+
+            <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_email_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_xs"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/email_id"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:layout_marginVertical="@dimen/padding_margin_m"/>
+
+            <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_password_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_xs"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:layout_marginVertical="@dimen/padding_margin_m"/>
+
+            <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_xs"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/confirm_email"
+                    android:inputType="textPassword"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:layout_marginVertical="@dimen/padding_margin_m"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/check_box_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <com.example.myshop.utils.font.RegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/agree_term"
+                        android:textSize="@dimen/text_size_xs"/>
+
+                <com.example.myshop.utils.font.BoldTextView
+                        android:id="@+id/terms_condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_xs"
+                        android:text="@string/terms_condition"/>
+
+            </LinearLayout>
+
+            <com.example.myshop.utils.font.BoldButton
+                    android:id="@+id/btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textSize="@dimen/text_size_s"
+                    android:text="@string/register"
+                    android:textColor="@color/white"
+                    android:layout_marginVertical="@dimen/padding_margin_s"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/padding_margin_m"
+                    android:gravity="center">
+
+                <com.example.myshop.utils.font.RegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/already_have_acc"
+                        android:textSize="@dimen/text_size_xs"
+                        android:padding="@dimen/padding_margin_3xs"/>
+
+                <com.example.myshop.utils.font.BoldTextView
+                        android:id="@+id/txt_login_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_xs"
+                        android:padding="@dimen/padding_margin_2xs"
+                        android:text="@string/login"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

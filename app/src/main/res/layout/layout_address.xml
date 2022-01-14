@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_margin_2xs"
+    android:paddingHorizontal="@dimen/padding_margin_xs"
+    android:paddingVertical="@dimen/padding_margin_s">
+
+    <com.example.myshop.utils.font.BoldTextView
+        android:id="@+id/txt_name_address_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="thuan do"
+        android:textSize="@dimen/text_size_xs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.myshop.utils.font.RegularTextView
+        android:id="@+id/txt_address_details_address_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_2xs"
+        android:text="XYZ"
+        android:textSize="@dimen/text_size_2xs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_address_layout" />
+
+    <com.example.myshop.utils.font.RegularTextView
+        android:id="@+id/txt_phone_address_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_2xs"
+        android:text="0868041232"
+        android:textSize="@dimen/text_size_2xs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_address_details_address_layout" />
+
+    <com.example.myshop.utils.font.BoldTextView
+        android:id="@+id/txt_type_address_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_gradient"
+        android:padding="@dimen/padding_margin_xs"
+        android:text="home"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

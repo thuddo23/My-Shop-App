@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //padding-margin size
+    <dimen name="padding_margin_3xs">2dp</dimen>
+    <dimen name="padding_margin_2xs">4dp</dimen>
+    <dimen name="padding_margin_xs">8dp</dimen>
+    <dimen name="padding_margin_s">12dp</dimen>
+    <dimen name="padding_margin_m">16dp</dimen>
+    <dimen name="padding_margin_l">20dp</dimen>
+    <dimen name="padding_margin_xl">24dp</dimen>
+    <dimen name="padding_margin_2xl">30dp</dimen>
+    <dimen name="padding_margin_3xl">36dp</dimen>
+    <dimen name="padding_margin_4xl">65dp</dimen>
+
+    //component size
+    <dimen name="component_size_3xs">10dp</dimen>
+    <dimen name="component_size_2xs">15dp</dimen>
+    <dimen name="component_size_xs">20dp</dimen>
+    <dimen name="component_size_s">30dp</dimen>
+    <dimen name="component_size_m">40dp</dimen>
+    <dimen name="component_size_l">50dp</dimen>
+    <dimen name="component_size_xl">65dp</dimen>
+    <dimen name="component_size_2xl">75dp</dimen>
+    <dimen name="component_size_3xl">90dp</dimen>
+
+    //text size
+    <dimen name="text_size_3xs">10sp</dimen>
+    <dimen name="text_size_2xs">12sp</dimen>
+    <dimen name="text_size_xs">16sp</dimen>
+    <dimen name="text_size_s">20sp</dimen>
+    <dimen name="text_size_m">24sp</dimen>
+    <dimen name="text_size_l">30sp</dimen>
+    <dimen name="text_size_xl">36sp</dimen>
+    <dimen name="text_size_2xl">42sp</dimen>
+
+    //radius
+    <dimen name="button_background_radius">8dp</dimen>
+    <dimen name="edit_txt_background_radius">4dp</dimen>
+    <dimen name="radius_radio_button">4dp</dimen>
+    <dimen name="radius_img_profile">16dp</dimen>
+
+
+    //particulate size
+    <dimen name="img_title_height">200dp</dimen>
+    <dimen name="padding_margin_back_btn">16dp</dimen>
+
+    //image size
+    <dimen name="img_profile_size">150dp</dimen>
+    <dimen name="img_product_dashboard_size">150dp</dimen>
+    <dimen name="img_product_size">240dp</dimen>
+    <dimen name="img_product_item_size">100dp</dimen>
+    <dimen name="img_cart_item_size">100dp</dimen>
+
+
+
+
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/padding_margin_2xs"
+    android:layout_marginVertical="@dimen/padding_margin_2xs"
+    android:background="@drawable/product_item_background"
+    android:padding="@dimen/padding_margin_xs">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_product_item"
+        android:layout_width="@dimen/img_product_item_size"
+        android:layout_height="@dimen/img_product_item_size"
+        android:background="@color/white"
+        android:padding="@dimen/padding_margin_2xs"
+        android:src="@drawable/ic_baseline_save_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.myshop.utils.font.BoldTextView
+        android:id="@+id/txt_name_product_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_margin_s"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_size_s"
+        app:layout_constraintStart_toEndOf="@id/img_product_item"
+        app:layout_constraintTop_toTopOf="@id/img_product_item" />
+
+    <com.example.myshop.utils.font.RegularTextView
+        android:id="@+id/txt_description_product_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_xs"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/txt_name_product_item"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_product_item" />
+
+    <com.example.myshop.utils.font.RegularTextView
+        android:id="@+id/txt_prices_product_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_xs"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_xs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txt_name_product_item" />
+
+    <ImageView
+        android:id="@+id/img_remove_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_delete_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img_product_item" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

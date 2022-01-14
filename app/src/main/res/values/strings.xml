@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">MyShop</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have_account">Don\'t have account?</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="email_id">Email ID</string>
+    <string name="create_acc">Create an account</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="confirm_email">Confirm Email</string>
+    <string name="agree_term">I Agree To The </string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="terms_condition">Terms &amp; Condition</string>
+    <string name="already_have_acc">Already have an account?</string>
+
+    <string name="error_enter_first_name">Please enter the first name.</string>
+    <string name="error_enter_last_name">Please enter the last name.</string>
+    <string name="error_valid_first_name">Please enter a valid first name.</string>
+    <string name="error_valid_last_name">Please enter a valid last name.</string>
+    <string name="error_enter_email">Please enter the valid email.</string>
+    <string name="error_enter_password_8_chars">Password must is more 8 characters.</string>
+    <string name="error_enter_password">Please enter the password.</string>
+    <string name="error_enter_confirm_password">Please enter confirm password.</string>
+    <string name="error_enter_confirm_password_mismatch">Please enter match confirm password.</string>
+    <string name="error_agree_terms_and_condition">Please agree terms &amp; condition.</string>
+    <string name="notify_valid_details">Thanks for registering!.</string>
+    <string name="login_successful">Logged in successful!.</string>
+    <string name="register_failed">Register failed!.</string>
+    <string name="login_failed">Logged in failed!.</string>
+    <string name="error_enter_phone_number">Please enter the phone number.</string>
+
+
+    <string name="please_wait">Please wait&#8230;</string>
+
+    <string name="forgot_password_screen">Forgot password</string>
+    <string name="submit">Submit</string>
+    <string name="description_forgot">Enter your username or e-mail address. We\'ll send you a email to reset your password.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_dashboard_fragment">Hello Dashboard fragment</string>
+    <string name="hello_products_fragment">Hello Products fragment</string>
+    <string name="hello_orders_fragment">Hello Orders fragment</string>
+    <string name="hello_sales_fragment">Hello Sales fragment</string>
+
+    //Bottom Navigation
+    <string name="dashboard">Dashboard</string>
+    <string name="products">Products</string>
+    <string name="orders">Orders</string>
+    <string name="sales">Sales</string>
+
+    //toolbar menu item name
+    <string name="cart">Cart</string>
+    <string name="setting">Setting</string>
+    <string name="add">Add</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="profile_user">Profile User</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="save">Save</string>
+
+    <string name="dashboard_fragment">Dashboard</string>
+    <string name="products_fragment">Products</string>
+    <string name="orders_fragment">Orders</string>
+    <string name="sales_fragment">Sales</string>
+
+    <string name="edit">Edit</string>
+    <string name="logout">Logout</string>
+    <string name="address">Address</string>
+
+    <string name="product_title">Product Title</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_description">Product Description</string>
+    <string name="product_quantity">Product Quantity</string>
+    <string name="add_product">ADD PRODUCT</string>
+
+    <string name="error_product_img">Please select product image.</string>
+    <string name="error_product_title">Please enter the valid product title.</string>
+    <string name="error_product_price">Please enter the valid product price.</string>
+    <string name="error_product_description">Please enter the valid product description.</string>
+    <string name="error_product_quantity">Please enter the value of quantity at least one.</string>
+    <string name="error_">Please </string>
+    <string name="no_products">No product add yet!</string>
+    <string name="no_dashboard_products">No items found!</string>
+
+    <string name="delete_dialog_message">Are you sure that you want to delete this product?</string>
+    <string name="delete_dialog_title"><Delete></Delete></string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="product_delete_success_message">Your product was deleted successfully.</string>
+
+    <string name="stock_quantity">Stock Quantity</string>
+    <string name="btn_add_to_cart">Add To Cart</string>
+    <string name="btn_move_to_cart">Move To Cart</string>
+
+    <string name="title_my_cart">Move To Cart</string>
+    <string name="no_cart_item_found">No item found in cart!</string>
+    <string name="lbl_subtotal">Subtotal</string>
+    <string name="lbl_shipping_charge">Shipping Charge</string>
+    <string name="lbl_total_amount">Total amount</string>
+    <string name="btn_lbl_checkout">Checkout</string>
+    <string name="my_cart">My Cart</string>
+
+    <string name="out_of_stock">OUT OF STOCK</string>
+    <string name="item_removed_successfully">Item removed successfully.</string>
+
+    <string name="msg_for_available_stock">Available stock is %1$s! You can not add more stock quantity.</string>
+
+    <string name="address_list">Address List</string>
+    <string name="add_address">Add Address</string>
+    <string name="no_address_found">No Address Found!</string>
+
+
+    <string name="full_name">Full name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="zip_code">ZipCode</string>
+    <string name="additional_note">Additional note</string>
+    <string name="home">Home</string>
+    <string name="office">Office</string>
+    <string name="other">Other</string>
+    <string name="other_details">Other details</string>
+    <string name="title_edit_address">EDIT ADDRESS</string>
+    <string name="update">Update</string>
+    <string name="your_update_is_successfully">Your update was successfully.</string>
+
+    <string name="please_enter_full_name">Please enter full name.</string>
+    <string name="please_enter_phone_number">Please enter phone number.</string>
+    <string name="please_enter_address">Please enter address.</string>
+    <string name="please_enter_zip_code">Please enter zip-code.</string>
+    <string name="please_enter_other_details">Please enter other details.</string>
+    <string name="success_add_address">Your address was added successfully.</string>
+</resources>

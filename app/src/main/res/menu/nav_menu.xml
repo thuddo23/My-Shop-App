@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/dashboardFragment"
+            android:icon="@drawable/dashboard"
+            android:title="Dashboard"/>
+    <item
+            android:id="@+id/productsFragment"
+            android:icon="@drawable/package1"
+            android:title="@string/products"/>
+    <item
+            android:id="@+id/ordersFragment"
+            android:icon="@drawable/checkout"
+            android:title="@string/orders"/>
+    <item
+            android:id="@+id/saleFragment"
+            android:icon="@drawable/coupon"
+            android:title="@string/sales"/>
+</menu>

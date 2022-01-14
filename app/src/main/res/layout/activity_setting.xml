@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.SettingActivity">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_backGr_setting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/img_title_height"
+            android:scaleType="center"
+            android:src="@drawable/backgr_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.example.myshop.utils.font.BoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/setting"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_s" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/fl_user_profile_setting"
+            android:layout_width="@dimen/img_profile_size"
+            android:layout_height="@dimen/img_profile_size"
+            android:layout_marginTop="@dimen/padding_margin_s"
+            app:layout_constraintBottom_toBottomOf="@id/img_backGr_setting"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_backGr_setting">
+
+            <ImageView
+                android:id="@+id/img_user_profile_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/padding_margin_2xs"
+                android:background="@color/divider_color"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_user_placeholder" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_img_profile" />
+        </FrameLayout>
+
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:id="@+id/txt_edit_profile_setting"
+            android:layout_width="64dp"
+            android:layout_height="30dp"
+            android:layout_margin="@dimen/padding_margin_s"
+            android:background="@drawable/button_small_background"
+            android:gravity="center"
+            android:padding="@dimen/padding_margin_2xs"
+            android:text="@string/edit"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/padding_margin_s"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_backGr_setting" />
+
+        <com.example.myshop.utils.font.BoldTextView
+            android:id="@+id/txt_name_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/padding_margin_s"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/text_size_xs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_user_profile_setting" />
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:id="@+id/txt_gmail_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/padding_margin_s"
+            android:textSize="@dimen/text_size_xs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_name_setting" />
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:id="@+id/txt_number_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/padding_margin_s"
+            android:textSize="@dimen/text_size_xs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_gmail_setting" />
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:id="@+id/txt_gender_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/padding_margin_s"
+            android:textSize="@dimen/text_size_xs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_number_setting" />
+
+        <com.example.myshop.utils.font.RegularTextView
+            android:id="@+id/txt_address_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_margin_l"
+            android:layout_marginVertical="@dimen/padding_margin_m"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:paddingHorizontal="@dimen/padding_margin_s"
+            android:paddingVertical="@dimen/padding_margin_m"
+            android:text="@string/address"
+            android:textSize="@dimen/text_size_s"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_gender_setting" />
+
+        <com.example.myshop.utils.font.BoldButton
+            android:id="@+id/btn_logout_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_margin_4xl"
+            android:layout_marginVertical="@dimen/padding_margin_2xl"
+            android:background="@drawable/button_background"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_s"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_address_txt" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

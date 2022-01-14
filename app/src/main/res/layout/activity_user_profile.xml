@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.UserProfileActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_profile_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_primary_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.example.myshop.utils.font.BoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/profile_user"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_m" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                tools:context=".UserProfileFragment">
+
+                <FrameLayout
+                    android:id="@+id/fl_user_image"
+                    android:layout_width="@dimen/img_profile_size"
+                    android:layout_height="@dimen/img_profile_size"
+                    android:layout_marginTop="@dimen/padding_margin_s"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/img_user_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/padding_margin_2xs"
+                        android:background="@color/divider_color"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_user_placeholder" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_img_profile" />
+                </FrameLayout>
+
+                <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_first_name_user_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/padding_margin_m"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/first_name"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_xs" />
+
+                <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_last_name_user_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/padding_margin_m"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/last_name"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:textSize="@dimen/text_size_xs" />
+
+                <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_email_user_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/padding_margin_m"
+                    android:background="@drawable/edit_text_background"
+                    android:enabled="false"
+                    android:hint="@string/email_id"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_size_xs" />
+
+                <com.example.myshop.font.RegularEditText
+                    android:id="@+id/edit_mobile_number_user_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/padding_margin_m"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/mobile_number"
+                    android:inputType="number"
+                    android:paddingHorizontal="@dimen/padding_margin_s"
+                    android:paddingVertical="@dimen/padding_margin_m"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_xs" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/padding_margin_s"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.example.myshop.utils.font.CustomRadioButton
+                        android:id="@+id/btn_gender_male_profile"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/component_size_m"
+                        android:layout_marginEnd="@dimen/padding_margin_xs"
+                        android:layout_weight="1"
+                        android:background="@drawable/gender_tab_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/male"
+                        android:textColor="@drawable/gender_tab_text_color_selector"
+                        android:textSize="@dimen/padding_margin_m"
+                        android:textStyle="bold" />
+
+                    <com.example.myshop.utils.font.CustomRadioButton
+                        android:id="@+id/btn_gender_female_profile"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/component_size_m"
+                        android:layout_marginEnd="@dimen/padding_margin_xs"
+                        android:layout_weight="1"
+                        android:background="@drawable/gender_tab_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/female"
+                        android:textColor="@drawable/gender_tab_text_color_selector"
+                        android:textSize="@dimen/padding_margin_m"
+                        android:textStyle="bold" />
+                </RadioGroup>
+
+                <com.example.myshop.utils.font.BoldButton
+                    android:id="@+id/btn_save_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/padding_margin_s"
+                    android:background="@drawable/button_background"
+                    android:text="@string/save"
+                    android:textSize="@dimen/text_size_s" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/product_item_background"
+    android:layout_margin="@dimen/padding_margin_2xs">
+
+    <FrameLayout
+        android:id="@+id/fl_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background ="@drawable/fl_dashboard_background"
+        android:padding="@dimen/padding_margin_xs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_product_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/img_product_dashboard_size"
+            android:background="@color/light_divider_color"
+            android:src="@drawable/ic_baseline_save_24" />
+    </FrameLayout>
+
+
+    <com.example.myshop.utils.font.BoldTextView
+        android:id="@+id/txt_product_title_dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_margin_s"
+        android:layout_marginVertical="@dimen/padding_margin_2xs"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_size_xs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_dashboard"
+        />
+    <com.example.myshop.utils.font.RegularTextView
+        android:id="@+id/txt_product_price_dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/txt_product_title_dashboard"
+        android:layout_marginTop="@dimen/padding_margin_2xs"
+        android:textColor="@color/primary_text"
+        app:layout_constraintTop_toBottomOf="@id/txt_product_title_dashboard"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
