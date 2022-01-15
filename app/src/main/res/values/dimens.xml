@@ -52,6 +52,11 @@
     <dimen name="img_product_item_size">100dp</dimen>
     <dimen name="img_cart_item_size">100dp</dimen>
 
+    //check out recyclerview size
+    <dimen name="rc_checkout_size">250dp</dimen>
+
+
+
 
 
 

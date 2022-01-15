@@ -25,12 +25,16 @@
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_add_edit_address.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_add_product.xml" value="0.2" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_address_list.xml" value="0.2" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_base.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_cart_list.xml" value="0.2" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_check_out.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.259375" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_login.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_main.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_product_details.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_register.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_setting.xml" value="0.264" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_splash.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_user_profile.xml" value="0.2" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_base.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.259375" />

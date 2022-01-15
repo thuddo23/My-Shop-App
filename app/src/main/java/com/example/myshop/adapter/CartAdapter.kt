@@ -17,7 +17,7 @@ import com.example.myshop.models.CartItem
 import com.example.myshop.utils.Constant
 import com.example.myshop.utils.GlideLoader
 
-class CartAdapter(private val context: Context, private val cartItems: List<CartItem>) :
+class CartAdapter(private val context: Context, private val cartItems: List<CartItem>,private val updateCartItem:Boolean = true) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -33,6 +33,7 @@ class CartAdapter(private val context: Context, private val cartItems: List<Cart
             cartItem.image,
             (holder as ViewHolder).imgCartItem
         )
+
         (holder as ViewHolder).txtTitle.text = cartItem.title
         (holder as ViewHolder).txtPrices.text = "$" + cartItem.price
         (holder as ViewHolder).txtQuantityCartItem.text = cartItem.cart_quantity
@@ -87,6 +88,12 @@ class CartAdapter(private val context: Context, private val cartItems: List<Cart
                 itemHashMap[Constant.CART_QUANTITY] = newCartQuantity.toString()
                 FireStoreClass().updateCartItem(context, cartItem.id, itemHashMap)
             }
+        }
+
+        if(!updateCartItem){
+            (holder as ViewHolder).imgDeleteCartItem.visibility = View.GONE
+            (holder as ViewHolder).imgMinusCartItem.visibility = View.GONE
+            (holder as ViewHolder).imgAddCartItem .visibility = View.GONE
         }
 
     }

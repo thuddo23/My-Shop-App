@@ -10,10 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.myshop.activities.*
 import com.example.myshop.fragments.DashboardFragment
 import com.example.myshop.fragments.ProductsFragment
-import com.example.myshop.models.Address
-import com.example.myshop.models.CartItem
-import com.example.myshop.models.Product
-import com.example.myshop.models.User
+import com.example.myshop.models.*
 import com.example.myshop.utils.Constant
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.ktx.auth
@@ -207,7 +204,7 @@ class FireStoreClass {
             }
     }
 
-    fun getCartList(cartListActivity: CartListActivity) {
+    fun getCartList(context: Context) {
         mFireStore.collection(Constant.CART_ITEMS)
             .whereEqualTo(Constant.USER_ID, getCurrentUserID())
             .get()
@@ -218,8 +215,14 @@ class FireStoreClass {
                     cartItem!!.id = i.id
                     cartList.add(cartItem)
                 }
-
-                cartListActivity.successGetCartList(cartList)
+                when (context) {
+                    is CartListActivity -> {
+                        context.successGetCartList(cartList)
+                    }
+                    is CheckOutActivity -> {
+                        context.successGetCartList(cartList)
+                    }
+                }
             }
     }
 
@@ -245,7 +248,7 @@ class FireStoreClass {
             }
     }
 
-    fun getAllProducts(cartListActivity: CartListActivity) {
+    fun getAllProducts(context: Context) {
         mFireStore.collection(Constant.PRODUCTS)
             .get()
             .addOnSuccessListener { document ->
@@ -256,7 +259,14 @@ class FireStoreClass {
                     product!!.product_id = i.id
                     productList.add(product)
                 }
-                cartListActivity.successGetAllProducts(productList)
+                when (context) {
+                    is CartListActivity -> {
+                        context.successGetAllProducts(productList)
+                    }
+                    is CheckOutActivity -> {
+                        context.successGetAllProducts(productList)
+                    }
+                }
             }
     }
 
@@ -290,13 +300,30 @@ class FireStoreClass {
             }
     }
 
-    fun updateAddress(context:AddEditAddressActivity, address_id : String, addressInfo :Address){
+    fun updateAddress(context: AddEditAddressActivity, addressId: String, addressInfo: Address) {
         mFireStore.collection(Constant.ADDRESS)
-            .document(address_id)
-            .set(addressInfo,SetOptions.merge())
+            .document(addressId)
+            .set(addressInfo, SetOptions.merge())
             .addOnSuccessListener {
                 context.successAddAddress()
             }
     }
 
+    fun deleteAddress(context: AddressListActivity, addressId: String) {
+        mFireStore.collection(Constant.ADDRESS)
+            .document(addressId)
+            .delete()
+            .addOnSuccessListener {
+                context.successDeleteAddress()
+            }
+    }
+
+    fun placeOrder(checkOutActivity: CheckOutActivity,order: Order){
+        mFireStore.collection(Constant.ORDERS)
+            .document()
+            .set(order, SetOptions.merge())
+            .addOnSuccessListener {
+                checkOutActivity.successPlaceOrder()
+            }
+    }
 }

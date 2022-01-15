@@ -156,6 +156,7 @@
                     android:layout_marginVertical="@dimen/padding_margin_s"
                     android:background="@drawable/button_background"
                     android:text="@string/save"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size_s" />
 
             </LinearLayout>

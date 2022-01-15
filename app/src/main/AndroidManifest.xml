@@ -14,15 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyShop">
         <activity
-            android:name=".activities.AddEditAddressActivity"
+            android:name=".activities.CheckOutActivity"
             android:theme="@style/Theme.MyShop.NoActionBar"
+            android:screenOrientation="portrait"
             android:exported="false" />
+        <activity
+            android:name=".activities.AddEditAddressActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyShop.NoActionBar" />
         <activity
             android:name=".activities.AddressListActivity"
-            android:theme="@style/Theme.MyShop.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyShop.NoActionBar" />
         <activity
             android:name=".activities.CartListActivity"
+            android:theme="@style/Theme.MyShop.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".activities.ProductDetailsActivity"
@@ -30,6 +37,7 @@
             android:theme="@style/Theme.MyShop.NoActionBar" />
         <activity
             android:name=".activities.AddProductActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:theme="@style/Theme.MyShop.NoActionBar" />
         <activity

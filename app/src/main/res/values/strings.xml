@@ -131,4 +131,13 @@
     <string name="please_enter_zip_code">Please enter zip-code.</string>
     <string name="please_enter_other_details">Please enter other details.</string>
     <string name="success_add_address">Your address was added successfully.</string>
+    <string name="title_select_address">SELECT ADDRESS</string>
+
+    <string name="title_checkout">Checkout</string>
+    <string name="checkout_product_items">Product Items</string>
+    <string name="checkout_selected_address">Selected Address</string>
+    <string name="checkout_items_receipt">Items receipt</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="cash_on_delivery">Cash On Delivery</string>
+    <string name="place_order">Place Order</string>
 </resources>

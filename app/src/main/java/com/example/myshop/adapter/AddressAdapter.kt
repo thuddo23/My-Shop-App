@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myshop.R
 import com.example.myshop.activities.AddEditAddressActivity
 import com.example.myshop.models.Address
-import com.example.myshop.recyclerviewswipeimport.SwipeToDeleteCallback
 import com.example.myshop.utils.Constant
 
 class AddressAdapter(private val context: Context, private var addressList: ArrayList<Address>) :
@@ -31,6 +30,12 @@ class AddressAdapter(private val context: Context, private var addressList: Arra
             holder.itemView.findViewById<TextView>(R.id.txt_address_details_address_layout).text =
                 address.address
             holder.itemView.findViewById<TextView>(R.id.txt_type_address_layout).text = address.type
+
+            holder.itemView.setOnClickListener {
+                onItemClickListener?.let {
+                    it(address)
+                }
+            }
         }
     }
 
@@ -43,6 +48,12 @@ class AddressAdapter(private val context: Context, private var addressList: Arra
 
     override fun getItemCount(): Int {
         return addressList.size
+    }
+
+    private var onItemClickListener: ((Address) -> Unit)? = null
+
+    fun setOnItemClickListener(onClick: ((Address) -> Unit)) {
+        onItemClickListener = onClick
     }
 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)

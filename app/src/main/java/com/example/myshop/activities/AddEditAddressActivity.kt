@@ -110,6 +110,7 @@ class AddEditAddressActivity : BaseActivity() {
             resources.getString(R.string.your_update_is_successfully)
         } else {resources.getString(R.string.success_add_address)}
         showErrorSnackBar(notify, false)
+        setResult(RESULT_OK)
         finish()
     }
 

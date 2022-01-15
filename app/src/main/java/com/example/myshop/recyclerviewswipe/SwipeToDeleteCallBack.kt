@@ -13,14 +13,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myshop.R
 
 
-abstract class SwipeToDeleteCallback(context: Context) :
+abstract class SwipeToDeleteCallBack(context: Context) :
     ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
-    private val editIcon = ContextCompat.getDrawable(context, R.drawable.ic_baseline_edit_24)
+    private val editIcon = ContextCompat.getDrawable(context,
+        R.drawable.ic_baseline_delete_white_24
+    )
     private val intrinsicWidth = editIcon!!.intrinsicWidth
     private val intrinsicHeight = editIcon!!.intrinsicHeight
     private val background = ColorDrawable()
-    private val backgroundColor = Color.parseColor("#989898")
+    private val backgroundColor = Color.parseColor("#FF4B3B")
     private val clearPaint = Paint().apply { xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR) }
 
 

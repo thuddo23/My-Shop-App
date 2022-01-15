@@ -1,5 +1,6 @@
 package com.example.myshop.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
@@ -10,6 +11,7 @@ import com.example.myshop.databinding.ActivityCartListBinding
 import com.example.myshop.firestore.FireStoreClass
 import com.example.myshop.models.CartItem
 import com.example.myshop.models.Product
+import com.example.myshop.utils.Constant
 
 class CartListActivity : BaseActivity() {
     private lateinit var binding: ActivityCartListBinding
@@ -20,6 +22,11 @@ class CartListActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_cart_list)
         fullScreen()
         setUpActionBar()
+        binding.btnCheckOutCartList.setOnClickListener {
+            val intent = Intent(this@CartListActivity, AddressListActivity::class.java)
+            intent.putExtra(Constant.EXTRA_SELECT_ADDRESS, true)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
@@ -32,7 +39,7 @@ class CartListActivity : BaseActivity() {
         FireStoreClass().getCartList(this)
     }
 
-    fun successUpdateCartItem(){
+    fun successUpdateCartItem() {
         FireStoreClass().getCartList(this)
     }
 

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_divider_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".activities.CheckOutActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.example.myshop.utils.font.BoldTextView
+                android:id="@+id/title_toolbar_checkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/title_checkout"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_m" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/bottom_linear_checkout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_checkout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/padding_margin_2xs"
+                android:paddingBottom="@dimen/padding_margin_3xs">
+
+                <com.example.myshop.utils.font.RegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_divider_color"
+                    android:padding="@dimen/padding_margin_xs"
+                    android:text="@string/checkout_product_items" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_product_checkout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <com.example.myshop.utils.font.RegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_divider_color"
+                    android:padding="@dimen/padding_margin_xs"
+                    android:text="@string/checkout_selected_address" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_margin_xs">
+
+                    <com.example.myshop.utils.font.BoldTextView
+                        android:id="@+id/address_type_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home"
+                        android:textSize="@dimen/text_size_2xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/address_full_name_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/address_details_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/address_additional_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/address_phone_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/address_other_details_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_xs"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <com.example.myshop.utils.font.RegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_divider_color"
+                    android:padding="@dimen/padding_margin_xs"
+                    android:text="@string/checkout_items_receipt" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/padding_margin_xs">
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_subtotal_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_subtotal"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_shipping_charge_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_margin_xs"
+                        android:text="@string/lbl_shipping_charge"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_subtotal_checkout" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/subtotal_value_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$0"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_subtotal_checkout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_subtotal_checkout" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/shipping_charge_value_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$0"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_shipping_charge_checkout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_shipping_charge_checkout" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_total_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_total_amount"
+                        android:layout_marginTop="@dimen/padding_margin_xs"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_shipping_charge_checkout" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_total_value_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$0"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_total_checkout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_total_checkout" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_linear_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/padding_margin_l"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.example.myshop.utils.font.RegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_mode"
+                android:textSize="@dimen/text_size_xs"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.example.myshop.utils.font.BoldTextView
+                android:id="@+id/txt_payment_mode_checkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cash On Delivery"
+                android:textSize="@dimen/text_size_xs"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.example.myshop.utils.font.BoldButton
+                android:id="@+id/btn_place_order_check_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_margin_s"
+                android:layout_marginVertical="@dimen/padding_margin_xl"
+                android:background="@drawable/button_background"
+                android:text="@string/place_order"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_s"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_payment_mode_checkout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

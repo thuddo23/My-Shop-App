@@ -17,6 +17,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.example.myshop.utils.font.BoldTextView
+                android:id="@+id/title_toolbar_edit_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

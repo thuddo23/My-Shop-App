@@ -17,6 +17,7 @@ object Constant {
     //COLLECTIONS
     const val USERS = "users"
     const val PRODUCTS = "Products"
+    const val ORDERS = "orders"
 
     const val MYSHOP_PREFERENCES: String = "MyShopPalPrefs"
     const val LOGGED_IN_USERNAME: String = "logged_in_username"
@@ -39,14 +40,17 @@ object Constant {
 
     const val USER_ID = "user_id"
 
-    const val PRODUCT_ID= "product_id"
+    const val PRODUCT_ID = "product_id"
 
     const val EXTRA_PRODUCT_ID = "extra_product_id"
     const val EXTRA_PRODUCT_OWNER_ID = "extra_product_OWNER_id"
     const val EXTRA_ADDRESS_DETAILS = "extra_address_details"
+    const val EXTRA_SELECT_ADDRESS = "extra_select_address"
+    const val EXTRA_SELECTED_ADDRESS = "extra_selected_address"
+    const val ADD_ADDRESS_REQUEST_CODE = 121
 
     const val DEFAULT_CART_QUANTITY = "1"
-    const val CART_QUANTITY= "cart_quantity"
+    const val CART_QUANTITY = "cart_quantity"
 
     const val CART_ITEMS = "cart_items"
 
