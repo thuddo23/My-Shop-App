@@ -13,8 +13,4 @@
             android:id="@+id/ordersFragment"
             android:icon="@drawable/checkout"
             android:title="@string/orders"/>
-    <item
-            android:id="@+id/saleFragment"
-            android:icon="@drawable/coupon"
-            android:title="@string/sales"/>
 </menu>

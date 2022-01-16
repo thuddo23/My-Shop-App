@@ -74,12 +74,17 @@ class CheckOutActivity : BaseActivity() {
         binding.txtTotalValueCheckout.text = "$${mTotal}"
     }
 
-    fun successPlaceOrder() {
+    fun successUpdateAllDetails() {
         showErrorSnackBar("Your order was placed successfully.", false)
         val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
+    }
+
+
+    fun successPlaceOrder() {
+        FireStoreClass().updateAllDetails(this, mCartList)
     }
 
     private fun placeAnOrder() {

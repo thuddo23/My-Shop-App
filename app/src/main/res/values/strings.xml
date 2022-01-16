@@ -140,4 +140,5 @@
     <string name="payment_mode">Payment Mode</string>
     <string name="cash_on_delivery">Cash On Delivery</string>
     <string name="place_order">Place Order</string>
+    <string name="no_orders_placed_yet">No orders placed yet.</string>
 </resources>

@@ -42,7 +42,6 @@ class MainActivity : BaseActivity() {
                 R.id.dashboardFragment,
                 R.id.productsFragment,
                 R.id.ordersFragment,
-                R.id.saleFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -51,10 +50,5 @@ class MainActivity : BaseActivity() {
     override fun onBackPressed() {
         doubleBackToExist()
     }
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.toolbar_menu, menu)
-//        return true
-//    }
 
 }

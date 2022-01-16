@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_margin_xs"
-        android:textColor="@color/white"
+        android:textColor="@color/primary_text"
         app:layout_constraintStart_toStartOf="@id/txt_name_product_item"
         app:layout_constraintTop_toBottomOf="@id/txt_name_product_item" />
 
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_margin_xs"
-        android:textColor="@color/white"
+        android:textColor="@color/primary_text"
         android:textSize="@dimen/text_size_xs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/txt_name_product_item" />

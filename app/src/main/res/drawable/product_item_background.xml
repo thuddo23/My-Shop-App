@@ -4,5 +4,5 @@
 
     <corners android:radius="@dimen/padding_margin_xs" />
 
-   <solid android:color="@color/light_divider_color"/>
+   <solid android:color="#E8E8E8"/>
 </shape>

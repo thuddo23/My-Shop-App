@@ -9,6 +9,7 @@ import android.webkit.MimeTypeMap
 import androidx.fragment.app.Fragment
 import com.example.myshop.activities.*
 import com.example.myshop.fragments.DashboardFragment
+import com.example.myshop.fragments.OrdersFragment
 import com.example.myshop.fragments.ProductsFragment
 import com.example.myshop.models.*
 import com.example.myshop.utils.Constant
@@ -318,12 +319,48 @@ class FireStoreClass {
             }
     }
 
-    fun placeOrder(checkOutActivity: CheckOutActivity,order: Order){
+    fun placeOrder(checkOutActivity: CheckOutActivity, order: Order) {
         mFireStore.collection(Constant.ORDERS)
             .document()
             .set(order, SetOptions.merge())
             .addOnSuccessListener {
                 checkOutActivity.successPlaceOrder()
+            }
+    }
+
+    fun updateAllDetails(checkOutActivity: CheckOutActivity, cartList: ArrayList<CartItem>) {
+        val writeBatch = mFireStore.batch()
+        for (cartItem in cartList) {
+            val productHashMap = HashMap<String, Any>()
+            productHashMap[Constant.STOCK_QUANTITY] =
+                (cartItem.stock_quantity.toInt() - cartItem.cart_quantity.toInt()).toString()
+            //update product's stock quantity
+            val documentProductReference = mFireStore.collection(Constant.PRODUCTS)
+                .document(cartItem.product_id)
+            writeBatch.update(documentProductReference, productHashMap)
+
+            //delete cart after place order
+            val documentCartReference = mFireStore.collection(Constant.CART_ITEMS)
+                .document(cartItem.id)
+            writeBatch.delete(documentCartReference)
+        }
+        writeBatch.commit().addOnSuccessListener {
+            checkOutActivity.successUpdateAllDetails()
+        }
+    }
+
+    fun getMyOrdersList(fragment: OrdersFragment) {
+        mFireStore.collection(Constant.ORDERS)
+            .whereEqualTo(Constant.USER_ID, getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document ->
+                val orderList: ArrayList<Order> = ArrayList()
+                for (i in document.documents){
+                    val order = i.toObject(Order::class.java)
+                    order!!.id = i.id
+                    orderList.add(order)
+                }
+                fragment.successGetOrderList(orderList)
             }
     }
 }

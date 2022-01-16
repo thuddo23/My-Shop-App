@@ -27,14 +27,5 @@
         android:id="@+id/ordersFragment"
         android:name="com.example.myshop.fragments.OrdersFragment"
         android:label="@string/orders"
-        tools:layout="@layout/fragment_orders">
-        <action
-            android:id="@+id/action_ordersFragment_to_saleFragment"
-            app:destination="@id/saleFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/saleFragment"
-        android:name="com.example.myshop.fragments.SaleFragment"
-        android:label="@string/sales"
-        tools:layout="@layout/fragment_sale" />
+        tools:layout="@layout/fragment_orders"/>
 </navigation>
