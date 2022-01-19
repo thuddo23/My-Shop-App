@@ -1,5 +1,6 @@
 package com.example.myshop.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,10 +9,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myshop.R
+import com.example.myshop.activities.MyOrderDetailsActivity
 import com.example.myshop.adapter.OrderAdapter
 import com.example.myshop.databinding.FragmentOrdersBinding
 import com.example.myshop.firestore.FireStoreClass
 import com.example.myshop.models.Order
+import com.example.myshop.utils.Constant
 
 
 class OrdersFragment : Fragment() {
@@ -37,6 +40,11 @@ class OrdersFragment : Fragment() {
 
             val orderAdapter = OrderAdapter(requireContext(), orderList)
             binding.recyclerViewOrders.layoutManager = LinearLayoutManager(requireContext())
+            orderAdapter.setOnItemClickListener { order ->
+                val intent = Intent(requireContext(),MyOrderDetailsActivity::class.java)
+                intent.putExtra(Constant.EXTRA_MY_ORDER_DETAILS,order)
+                startActivity(intent)
+            }
             binding.recyclerViewOrders.adapter = orderAdapter
         } else {
             binding.recyclerViewOrders.visibility = View.GONE

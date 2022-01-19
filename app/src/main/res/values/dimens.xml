@@ -28,7 +28,7 @@
     <dimen name="text_size_3xs">10sp</dimen>
     <dimen name="text_size_2xs">12sp</dimen>
     <dimen name="text_size_xs">16sp</dimen>
-    <dimen name="text_size_s">20sp</dimen>
+    <dimen name="text_size_s">18sp</dimen>
     <dimen name="text_size_m">24sp</dimen>
     <dimen name="text_size_l">30sp</dimen>
     <dimen name="text_size_xl">36sp</dimen>
@@ -51,6 +51,7 @@
     <dimen name="img_product_size">240dp</dimen>
     <dimen name="img_product_item_size">100dp</dimen>
     <dimen name="img_cart_item_size">100dp</dimen>
+    <dimen name="img_item_sold_product_size">90dp</dimen>
 
     //check out recyclerview size
     <dimen name="rc_checkout_size">250dp</dimen>

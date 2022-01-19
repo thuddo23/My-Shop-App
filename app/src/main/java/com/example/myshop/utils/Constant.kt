@@ -18,7 +18,7 @@ object Constant {
     const val USERS = "users"
     const val PRODUCTS = "Products"
     const val ORDERS = "orders"
-
+    const val SOLD_PRODUCTS: String = "sold_products"
     const val MYSHOP_PREFERENCES: String = "MyShopPalPrefs"
     const val LOGGED_IN_USERNAME: String = "logged_in_username"
     const val EXTRA_USERS_DETAILS: String = "extra_users_details"
@@ -47,6 +47,8 @@ object Constant {
     const val EXTRA_ADDRESS_DETAILS = "extra_address_details"
     const val EXTRA_SELECT_ADDRESS = "extra_select_address"
     const val EXTRA_SELECTED_ADDRESS = "extra_selected_address"
+    const val EXTRA_MY_ORDER_DETAILS = "extra_my_order_details"
+    const val EXTRA_SOLD_PRODUCT_DETAILS = "extra_sold_product_details"
     const val ADD_ADDRESS_REQUEST_CODE = 121
 
     const val DEFAULT_CART_QUANTITY = "1"

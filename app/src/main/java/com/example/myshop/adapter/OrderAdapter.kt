@@ -27,6 +27,11 @@ class OrderAdapter(private val context: Context, private val orderList: List<Ord
         (holder as ViewHolder).txtTitle.text = order.title
         (holder as ViewHolder).txtTotal.text = "$" + order.total_amount
         (holder as ViewHolder).imgDelete.visibility = View.GONE
+        holder.itemView.setOnClickListener {
+            onItemClick?.let {
+                it(order)
+            }
+        }
 
     }
 
@@ -39,5 +44,11 @@ class OrderAdapter(private val context: Context, private val orderList: List<Ord
         var txtTitle = view.findViewById<TextView>(R.id.txt_name_product_item)
         var txtTotal = view.findViewById<TextView>(R.id.txt_prices_product_item)
         var imgDelete = view.findViewById<ImageView>(R.id.img_remove_product)
+    }
+
+    private var onItemClick: ((Order) -> Unit)? = null
+
+    fun setOnItemClickListener(onClick: (Order) -> Unit) {
+        onItemClick = onClick
     }
 }

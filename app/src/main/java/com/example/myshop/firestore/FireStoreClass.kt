@@ -11,6 +11,7 @@ import com.example.myshop.activities.*
 import com.example.myshop.fragments.DashboardFragment
 import com.example.myshop.fragments.OrdersFragment
 import com.example.myshop.fragments.ProductsFragment
+import com.example.myshop.fragments.SoldProductFragment
 import com.example.myshop.models.*
 import com.example.myshop.utils.Constant
 import com.google.android.gms.tasks.Task
@@ -328,16 +329,35 @@ class FireStoreClass {
             }
     }
 
-    fun updateAllDetails(checkOutActivity: CheckOutActivity, cartList: ArrayList<CartItem>) {
+    fun updateAllDetails(
+        checkOutActivity: CheckOutActivity,
+        cartList: ArrayList<CartItem>,
+        order: Order
+    ) {
         val writeBatch = mFireStore.batch()
         for (cartItem in cartList) {
-            val productHashMap = HashMap<String, Any>()
-            productHashMap[Constant.STOCK_QUANTITY] =
-                (cartItem.stock_quantity.toInt() - cartItem.cart_quantity.toInt()).toString()
+//            val productHashMap = HashMap<String, Any>()
+//            productHashMap[Constant.STOCK_QUANTITY] =
+//                (cartItem.stock_quantity.toInt() - cartItem.cart_quantity.toInt()).toString()
             //update product's stock quantity
-            val documentProductReference = mFireStore.collection(Constant.PRODUCTS)
+
+            val soldProduct = SoldProduct(
+                cartItem.product_owner_id,
+                cartItem.title,
+                cartItem.price,
+                cartItem.cart_quantity,
+                cartItem.image,
+                order.title,
+                order.order_datetime,
+                order.sub_total_amount,
+                order.shipping_chart,
+                order.total_amount,
+                order.address
+            )
+
+            val documentProductReference = mFireStore.collection(Constant.SOLD_PRODUCTS)
                 .document(cartItem.product_id)
-            writeBatch.update(documentProductReference, productHashMap)
+            writeBatch.set(documentProductReference, soldProduct)
 
             //delete cart after place order
             val documentCartReference = mFireStore.collection(Constant.CART_ITEMS)
@@ -355,12 +375,27 @@ class FireStoreClass {
             .get()
             .addOnSuccessListener { document ->
                 val orderList: ArrayList<Order> = ArrayList()
-                for (i in document.documents){
+                for (i in document.documents) {
                     val order = i.toObject(Order::class.java)
                     order!!.id = i.id
                     orderList.add(order)
                 }
                 fragment.successGetOrderList(orderList)
+            }
+    }
+
+    fun getSoldProductsList(fragment: SoldProductFragment) {
+        mFireStore.collection(Constant.SOLD_PRODUCTS)
+            .whereEqualTo(Constant.USER_ID, getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document ->
+                val soldProductsList = ArrayList<SoldProduct>()
+                for (i in document.documents) {
+                    var soldProduct = i.toObject(SoldProduct::class.java)!!
+                    soldProduct.id = i.id
+                    soldProductsList.add(soldProduct)
+                }
+                fragment.successSoldProductsList(soldProductsList)
             }
     }
 }

@@ -23,6 +23,7 @@ class CheckOutActivity : BaseActivity() {
     private var mCartList = ArrayList<CartItem>()
     private var mSubtotal = 0.0
     private var mTotal = 0.0
+    private lateinit var mOrderDetails: Order
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_check_out)
@@ -34,10 +35,9 @@ class CheckOutActivity : BaseActivity() {
             placeAnOrder()
         }
 
-
     }
 
-    fun getAllProducts() {
+    private fun getAllProducts() {
         FireStoreClass().getAllProducts(this)
     }
 
@@ -61,9 +61,9 @@ class CheckOutActivity : BaseActivity() {
         binding.recyclerViewProductCheckout.adapter = cartListAdapter
 
         for (item in mCartList) {
-            val stockQuantity = item.stock_quantity.toDouble()
+            val cartQuantity = item.cart_quantity.toDouble()
             val price = item.price.toDouble()
-            mSubtotal += price * stockQuantity
+            mSubtotal += price * cartQuantity
         }
         binding.subtotalValueCheckout.text = "$${mSubtotal}"
         binding.shippingChargeValueCheckout.text = "$1.5"
@@ -84,12 +84,12 @@ class CheckOutActivity : BaseActivity() {
 
 
     fun successPlaceOrder() {
-        FireStoreClass().updateAllDetails(this, mCartList)
+        FireStoreClass().updateAllDetails(this, mCartList, mOrderDetails)
     }
 
     private fun placeAnOrder() {
         if (mAddressDetails != null) {
-            val order = Order(
+            mOrderDetails = Order(
                 FireStoreClass().getCurrentUserID(),
                 mCartList,
                 mAddressDetails!!,
@@ -97,9 +97,10 @@ class CheckOutActivity : BaseActivity() {
                 mCartList[0].image,
                 mSubtotal.toString(),
                 "1.5",
-                mTotal.toString()
+                mTotal.toString(),
+                System.currentTimeMillis()
             )
-            FireStoreClass().placeOrder(this, order)
+            FireStoreClass().placeOrder(this, mOrderDetails)
         }
     }
 

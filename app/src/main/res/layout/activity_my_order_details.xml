@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activities.MyOrderDetailsActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_order_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.example.myshop.utils.font.BoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/my_order_details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_m" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/padding_margin_3xs"
+            android:background="@color/light_divider_color"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_order_details">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.example.myshop.utils.font.RegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_margin_xs"
+                    android:text="@string/order_details"
+                    android:textSize="@dimen/text_size_2xs" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingVertical="@dimen/padding_margin_xs">
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_order_id_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:text="@string/order_id"
+                        android:textSize="@dimen/text_size_s"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_order_date_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginTop="@dimen/padding_margin_3xs"
+                        android:text="@string/order_date"
+                        android:textSize="@dimen/text_size_s"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_order_id_order_details" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_order_status_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginTop="@dimen/padding_margin_3xs"
+                        android:text="@string/order_status"
+                        android:textSize="@dimen/text_size_s"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_order_date_order_details" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_order_id_value_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginEnd="@dimen/padding_margin_xs"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_order_id_order_details"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_order_id_order_details" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_order_date_value_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginEnd="@dimen/padding_margin_xs"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_order_date_order_details"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_order_date_order_details" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_order_status_value_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginEnd="@dimen/padding_margin_xs"
+                        android:text="Pending"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_order_status_order_details"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_order_status_order_details" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.example.myshop.utils.font.RegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_margin_xs"
+                    android:text="@string/product_items"
+                    android:textSize="@dimen/text_size_2xs" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_product_items_order_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <com.example.myshop.utils.font.RegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_margin_xs"
+                    android:text="@string/shipping_address"
+                    android:textSize="@dimen/text_size_2xs" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <com.example.myshop.utils.font.BoldTextView
+                        android:id="@+id/txt_type_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:text="@string/home"
+                        android:textSize="@dimen/text_size_2xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_name_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_address_details_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_address_additional_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_other_details_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_phone_number_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:textSize="@dimen/text_size_xs" />
+
+                </LinearLayout>
+
+                <com.example.myshop.utils.font.RegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_margin_xs"
+                    android:text="@string/checkout_items_receipt"
+                    android:textSize="@dimen/text_size_2xs" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bottom_constraint_layout_order_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_subtotal_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:text="@string/lbl_subtotal"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_shipping_charge_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginTop="@dimen/padding_margin_3xs"
+                        android:text="@string/lbl_shipping_charge"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_subtotal_order_details" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_total_amount_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginTop="@dimen/padding_margin_3xs"
+                        android:text="@string/lbl_total_amount"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_shipping_charge_order_details" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_subtotal_value_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginEnd="@dimen/padding_margin_xs"
+                        android:text="$0"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_subtotal_order_details"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_subtotal_order_details" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_shipping_charge_value_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginEnd="@dimen/padding_margin_xs"
+                        android:text="$0"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_shipping_charge_order_details"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_shipping_charge_order_details" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:id="@+id/txt_total_amount_value_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_margin_xs"
+                        android:layout_marginEnd="@dimen/padding_margin_xs"
+                        android:text="$0"
+                        android:textSize="@dimen/text_size_xs"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_total_amount_order_details"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_total_amount_order_details" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/padding_margin_s">
+
+                    <com.example.myshop.utils.font.BoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/padding_margin_3xl"
+                        android:text="@string/payment_mode" />
+
+                    <com.example.myshop.utils.font.RegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_margin_3xl"
+                        android:text="@string/cash_on_delivery"
+                        android:textColor="@color/design_default_color_error" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

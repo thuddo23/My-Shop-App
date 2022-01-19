@@ -17,11 +17,13 @@
     <color name="primary_text">#222121</color>
     <color name="secondary_text">#989898</color>
     <color name="divider_color">#BDBDBD</color>
-    <color name="light_divider_color">#DADADA</color>
+    <color name="light_divider_color">#E6E6E6</color>
     <color name="cyan_color">#1792A5</color>
     <color name="_dark_cyan_color">#1274A5</color>
 
     <color name="snackbar_error_color">#FF4B3B</color>
     <color name="snackbar_success_color">#1274A5</color>
+    <color name="accent_yellow_color">#FAC012</color>
+    <color name="accent_green_color">#0FB633</color>
 
 </resources>

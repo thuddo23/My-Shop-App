@@ -31,9 +31,11 @@
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_login.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_my_order_details.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_product_details.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_register.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_setting.xml" value="0.264" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_sold_product_details.xml" value="0.264" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_splash.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_user_profile.xml" value="0.2" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_base.xml" value="0.259375" />
@@ -41,6 +43,8 @@
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_orders.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_products.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_sale.xml" value="0.259375" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_sold.xml" value="0.259375" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_sold_product.xml" value="0.22685185185185186" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/item_cart_layout.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/layout_address.xml" value="0.264" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/product_iem.xml" value="0.259375" />
@@ -49,6 +53,7 @@
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/progress_dialog.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/layout/txt_stock_quantity_background.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/menu/add_menu.xml" value="0.259375" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/menu/dashboard_menu.xml" value="0.13385416666666666" />
         <entry key="..\:/EcommerceApp/app/src/main/res/menu/nav_menu.xml" value="0.13333333333333333" />
         <entry key="..\:/EcommerceApp/app/src/main/res/menu/setting_menu.xml" value="0.259375" />
         <entry key="..\:/EcommerceApp/app/src/main/res/menu/toolbar_menu.xml" value="0.259375" />

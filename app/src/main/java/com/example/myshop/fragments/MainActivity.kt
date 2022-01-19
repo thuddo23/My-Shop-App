@@ -42,6 +42,7 @@ class MainActivity : BaseActivity() {
                 R.id.dashboardFragment,
                 R.id.productsFragment,
                 R.id.ordersFragment,
+                R.id.soldProductFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
