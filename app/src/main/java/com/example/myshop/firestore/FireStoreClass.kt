@@ -78,6 +78,14 @@ class FireStoreClass {
                     is AddProductActivity -> activity.getUserName(user)
                 }
             }
+            .addOnFailureListener {
+                when (activity) {
+                    is LoginActivity -> activity.userLoggedFail(it.message.toString())
+                    is SettingActivity -> {}
+                    is AddProductActivity -> {}
+                }
+                Log.d(activity.javaClass.simpleName, it.message.toString())
+            }
     }
 
     fun updateUserProfileData(activity: Activity, hashMap: HashMap<String, Any>): Task<Void> {

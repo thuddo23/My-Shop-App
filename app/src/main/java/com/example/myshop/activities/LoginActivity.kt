@@ -2,6 +2,7 @@ package com.example.myshop.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Message
 import androidx.databinding.DataBindingUtil
 import com.example.myshop.R
 import com.example.myshop.databinding.ActivityLoginBinding
@@ -11,6 +12,10 @@ import com.example.myshop.models.User
 import com.example.myshop.utils.Constant
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -51,7 +56,6 @@ class LoginActivity : BaseActivity() {
             val password = binding.editPassword.text.toString().trim()
             val auth = Firebase.auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    showErrorSnackBar(resources.getString(R.string.login_successful), false)
 //                    val firebaseUser = task.result.user
                     FireStoreClass().getUserDetails(this@LoginActivity)
                 } else {
@@ -62,19 +66,27 @@ class LoginActivity : BaseActivity() {
     }
 
     fun userLoggedInSuccess(user: User) {
-        if (user.profileCompleted == 0) {
-            val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
-            intent.putExtra(Constant.EXTRA_USERS_DETAILS,user)
-            startActivity(intent)
-        } else {
-            //Hide the progress dialog.
+        showErrorSnackBar(resources.getString(R.string.login_successful), false)
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(1000)
+            if (user.profileCompleted == 0) {
+                val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
+                intent.putExtra(Constant.EXTRA_USERS_DETAILS, user)
+                startActivity(intent)
+            } else {
+                //Hide the progress dialog.
 
-            //Print the user details in the log as of now.
-            //Redirect the user to Main Screen after log in.
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-            finish()
+                //Print the user details in the log as of now.
+                //Redirect the user to Main Screen after log in.
+                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                finish()
 
-            //In login screen the clickable components are Login Button, ForgotPassword text and Register Text.
+                //In login screen the clickable components are Login Button, ForgotPassword text and Register Text.
+            }
         }
+    }
+
+    fun userLoggedFail(message: String?) {
+        showErrorSnackBar((resources.getString(R.string.login_failed) + message) ?: "", true)
     }
 }
