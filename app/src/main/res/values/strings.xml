@@ -155,4 +155,9 @@
     <string name="order_status_pending">Pending</string>
     <string name="no_products_sold_yet">No products sold yet.</string>
     <string name="sold_product_details">Sold Product Details</string>
+    <string name="title_activity_binance_payment">BinancePaymentActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="binance_payment">Binance Payment</string>
 </resources>
