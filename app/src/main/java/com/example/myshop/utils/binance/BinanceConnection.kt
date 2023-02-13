@@ -16,14 +16,10 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class BinanceConnection(private val context: Context) {
-    private val requestQueue: RequestQueue
+    private val requestQueue: RequestQueue = Volley.newRequestQueue(context)
     private val key = arrayOf(
         "mhrahnj583jov5y6rrni8wf3ocmnu18xa5dg6guaoxaljjejolq2lv4hn5qbrrrk","l2kfohwgtukk2ez3lwyw5ys04wppoabtrnkdxuewcah9wmzoyiz2euyrxtzjp4j5"
         )
-
-    init {
-        requestQueue = Volley.newRequestQueue(context)
-    }
 
     fun getQRlink(orderID: String, price: Int, productName: String, imV: ImageView) {
         val url = "https://bpay.binanceapi.com/binancepay/openapi/v2/order"

@@ -213,7 +213,7 @@
                 android:id="@+id/txt_payment_mode_checkout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cash On Delivery"
+                android:text="Binance Payment"
                 android:textSize="@dimen/text_size_xs"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -32,7 +32,7 @@ class CheckOutActivity : BaseActivity() {
         displayAddressDetails()
         getAllProducts()
         binding.btnPlaceOrderCheckOut.setOnClickListener {
-//            placeAnOrder()
+            placeAnOrder()
             startActivity(Intent(this@CheckOutActivity, BinancePaymentActivity::class.java))
         }
 
