@@ -11,7 +11,6 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.Random
 
 class BinanceConnection(private val context: Context) {
     companion object {
@@ -24,7 +23,6 @@ class BinanceConnection(private val context: Context) {
         "l2kfohwgtukk2ez3lwyw5ys04wppoabtrnkdxuewcah9wmzoyiz2euyrxtzjp4j5"
     )
     private val chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    private val random = Random()
 
     fun getQRLink(
         orderID: String,
@@ -33,8 +31,10 @@ class BinanceConnection(private val context: Context) {
         onQrRequestCompleted: (String?) -> Unit
     ) {
         var none = ""
-        chars.forEach {_ ->
-            none+= chars[random.nextInt(31) + 1]
+        for (i in 0..31) {
+            val chart =
+                chars[Math.round(Math.random() * (chars.length - 1)).toInt()]
+            none += chart
         }
         val timestamp = System.currentTimeMillis()
         val body = providesBody(productName, orderID, price)
@@ -44,7 +44,7 @@ class BinanceConnection(private val context: Context) {
         val finalNone = none
         Log.d("sig:", signature)
         println(finalNone)
-        val jsrq: JsonObjectRequest =
+        val objectRequestBinance: JsonObjectRequest =
             object : JsonObjectRequest(Method.POST, BASE_URL, body, { response ->
                 val img: String
                 try {
@@ -73,24 +73,26 @@ class BinanceConnection(private val context: Context) {
                     return ha
                 }
             }
-        requestQueue.add(jsrq)
+        requestQueue.add(objectRequestBinance)
     }
 
     @Throws(AuthFailureError::class, JSONException::class)
     fun openApp(orderID: String, price: Int, productName: String) {
         val url = "https://bpay.binanceapi.com/binancepay/openapi/v2/order"
+        val chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         var none = ""
-        val body = providesBody(productName, orderID, price)
-        chars.forEach {_ ->
-            none+= chars[random.nextInt(31) + 1]
+        for (i in 0..31) {
+            val chart =
+                chars[Math.round(Math.random() * (chars.length - 1)).toInt()]
+            none += chart
         }
+        val body = providesBody(productName, orderID, price)
         val timestamp = System.currentTimeMillis()
         val signature = providesSignature(key[1], none, timestamp, body)
         Log.d("body1", body.toString())
         val result = ""
         val finalNone = none
         Log.d("final signature:", signature)
-        println(finalNone)
         val objectRequestBinance: JsonObjectRequest =
             object : JsonObjectRequest(Method.POST, url, body, { response ->
                 val deepLink: String

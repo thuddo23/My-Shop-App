@@ -17,7 +17,7 @@
             android:name=".activities.BinancePaymentActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
-            android:label="@string/title_activity_binance_payment"
+            android:label="@string/binance_payment"
             android:theme="@style/Theme.MyShop.Fullscreen" />
         <activity
             android:name=".activities.SoldProductDetailsActivity"

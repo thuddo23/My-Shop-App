@@ -58,6 +58,7 @@ class BinancePaymentActivity : AppCompatActivity() {
                 it?.let {
                     Glide.with(this@BinancePaymentActivity).load(it).into(binding.imgQrCode)
                 }
+                binding.progressBar.visibility = View.GONE
             }
         } catch (e: AuthFailureError) {
             e.printStackTrace()
