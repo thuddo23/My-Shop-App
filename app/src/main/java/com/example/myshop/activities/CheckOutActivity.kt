@@ -33,6 +33,7 @@ class CheckOutActivity : BaseActivity() {
         getAllProducts()
         binding.btnPlaceOrderCheckOut.setOnClickListener {
             placeAnOrder()
+            startActivity(Intent(this@CheckOutActivity, BinancePaymentActivity::class.java))
         }
 
     }
@@ -88,20 +89,20 @@ class CheckOutActivity : BaseActivity() {
     }
 
     private fun placeAnOrder() {
-        if (mAddressDetails != null) {
-            mOrderDetails = Order(
-                FireStoreClass().getCurrentUserID(),
-                mCartList,
-                mAddressDetails!!,
-                "My older ${System.currentTimeMillis()}",
-                mCartList[0].image,
-                mSubtotal.toString(),
-                "1.5",
-                mTotal.toString(),
-                System.currentTimeMillis()
-            )
-            FireStoreClass().placeOrder(this, mOrderDetails)
-        }
+//        if (mAddressDetails != null) {
+//            mOrderDetails = Order(
+//                FireStoreClass().getCurrentUserID(),
+//                mCartList,
+//                mAddressDetails!!,
+//                "My older ${System.currentTimeMillis()}",
+//                mCartList[0].image,
+//                mSubtotal.toString(),
+//                "1.5",
+//                mTotal.toString(),
+//                System.currentTimeMillis()
+//            )
+//            FireStoreClass().placeOrder(this, mOrderDetails)
+//        }
     }
 
     fun successGetAllProducts(productList: ArrayList<Product>) {

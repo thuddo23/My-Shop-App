@@ -2,8 +2,6 @@ package com.example.myshop.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.myshop.R
 import com.example.myshop.databinding.ActivityRegisterBinding
@@ -16,7 +14,7 @@ class RegisterActivity : BaseActivity() {
     lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        fullScreen()
+//        fullScreen()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register)
         binding.txtLoginRegister.setOnClickListener {
             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
@@ -32,7 +30,7 @@ class RegisterActivity : BaseActivity() {
         showProgressDialog("Please wait ..")
         val email = binding.editEmailRegister.text.toString().trim()
         val password = binding.editPasswordRegister.text.toString().trim()
-        var auth = Firebase.auth
+        val auth = Firebase.auth
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 showErrorSnackBar(resources.getString(R.string.notify_valid_details), false)
@@ -50,11 +48,11 @@ class RegisterActivity : BaseActivity() {
                     finish()
                 }
             } else {
-                showErrorSnackBar(resources.getString(R.string.register_failed), true)
+                showErrorSnackBar(
+                    (resources.getString(R.string.register_failed) + task.exception?.message) , true)
             }
         }
         hideProgressBar()
-
     }
 
     private fun validateRegisterDetails(): Boolean {
@@ -76,8 +74,7 @@ class RegisterActivity : BaseActivity() {
                 showErrorSnackBar(resources.getString(R.string.error_enter_password_8_chars), true)
                 false
             }
-            !binding.editConfirmPassword.text.toString().trim()
-                .equals(binding.editPasswordRegister.text.toString().trim()) -> {
+            binding.editConfirmPassword.text.toString().trim() != binding.editPasswordRegister.text.toString().trim() -> {
                 showErrorSnackBar(resources.getString(R.string.error_enter_confirm_password_mismatch), true)
                 false
             }

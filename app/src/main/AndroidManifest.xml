@@ -14,10 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyShop">
         <activity
+            android:name=".activities.BinancePaymentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/binance_payment"
+            android:theme="@style/Theme.MyShop.Fullscreen" />
+        <activity
             android:name=".activities.SoldProductDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.MyShop.NoActionBar"/>
+            android:theme="@style/Theme.MyShop.NoActionBar" />
         <activity
             android:name=".activities.MyOrderDetailsActivity"
             android:exported="false"
