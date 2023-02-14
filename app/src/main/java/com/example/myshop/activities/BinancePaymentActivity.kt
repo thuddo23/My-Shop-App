@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.AuthFailureError
+import com.bumptech.glide.Glide
 import com.example.myshop.databinding.ActivityBinancePaymentBinding
 import com.example.myshop.utils.binance.BinanceConnection
 import org.json.JSONException
 
 class BinancePaymentActivity : AppCompatActivity() {
-   private lateinit var binding: ActivityBinancePaymentBinding
-   private lateinit var binanceConnection: BinanceConnection
-   private lateinit var javaBinanceConnection: JavaBinanceConnection
+    private lateinit var binding: ActivityBinancePaymentBinding
+    private lateinit var binanceConnection: BinanceConnection
+    private lateinit var javaBinanceConnection: JavaBinanceConnection
 
-    //    var qrCodeImg: ImageView? = null
-//    var openButton: Button? = null
-//    var br: ProgressBar? = null
-//    var toolbarthanhtoan: Toolbar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBinancePaymentBinding.inflate(layoutInflater)
@@ -53,11 +50,15 @@ class BinancePaymentActivity : AppCompatActivity() {
     @Throws(JSONException::class)
     fun getPayment() {
         val adv = Integer.toString((Math.random() * 1000).toInt())
-        var ProductName = "test"
-        var totalPrice = 100
+        val ProductName = "test"
+        val totalPrice = 100
         //TODO set price of product here
         try {
-            binanceConnection.getQRlink(adv, totalPrice, ProductName, binding.imgQrCode)
+            binanceConnection.getQRLink(adv, totalPrice, ProductName) {
+                it?.let {
+                    Glide.with(this@BinancePaymentActivity).load(it).into(binding.imgQrCode)
+                }
+            }
         } catch (e: AuthFailureError) {
             e.printStackTrace()
         } catch (e: JSONException) {
@@ -69,9 +70,9 @@ class BinancePaymentActivity : AppCompatActivity() {
 
     @Throws(JSONException::class)
     fun getPayment2() {
-        val adv = Integer.toString((Math.random() * 1000).toInt())
-        var productName = ""
-        var totalPrice = 100
+        val adv = (Math.random() * 1000).toInt().toString()
+        val productName = "test"
+        val totalPrice = 100
         //TODO leave price here
         try {
             binanceConnection.openApp(adv, totalPrice, productName)

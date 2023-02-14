@@ -19,20 +19,20 @@
         app:layout_constraintVertical_bias="0.317"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
+    <com.example.myshop.utils.font.BoldButton
         android:id="@+id/btn_pay_now"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/background_gradient"
+        android:layout_marginHorizontal="@dimen/padding_margin_s"
+        android:layout_marginVertical="@dimen/padding_margin_xl"
+        android:background="@drawable/button_background"
         android:text="@string/pay_now"
-        android:textColor="#F6FD02"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_s"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_qr_code"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/img_qr_code"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
