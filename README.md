@@ -63,6 +63,8 @@ Finally, you have **Sold** screen, show you all of your product was sold and det
 
 <img src="https://drive.google.com/uc?export=view&id=1MXDuqZOWcjFcnCiXgT3TK4db5b3CgNvJ" width="200" height="420">
 
+Now we're integrated Binance payment, we generate QR code for user can Scan and payment by crypto.
+
 
 
 
