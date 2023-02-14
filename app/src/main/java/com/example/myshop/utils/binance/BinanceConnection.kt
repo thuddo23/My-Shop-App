@@ -11,6 +11,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
 import org.json.JSONObject
+import java.util.Random
 
 class BinanceConnection(private val context: Context) {
     companion object {
@@ -22,6 +23,8 @@ class BinanceConnection(private val context: Context) {
         "mhrahnj583jov5y6rrni8wf3ocmnu18xa5dg6guaoxaljjejolq2lv4hn5qbrrrk",
         "l2kfohwgtukk2ez3lwyw5ys04wppoabtrnkdxuewcah9wmzoyiz2euyrxtzjp4j5"
     )
+    private val chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    private val random = Random()
 
     fun getQRLink(
         orderID: String,
@@ -29,40 +32,20 @@ class BinanceConnection(private val context: Context) {
         productName: String,
         onQrRequestCompleted: (String?) -> Unit
     ) {
-        val sig = Signature()
-        val chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         var none = ""
-        var signature = ""
-        for (i in 0..31) {
-            val chart =
-                chars[Math.round(Math.random() * (chars.length - 1)).toInt()]
-            none += chart
+        chars.forEach {_ ->
+            none+= chars[random.nextInt(31) + 1]
         }
         val timestamp = System.currentTimeMillis()
-        val jsonbody = JSONObject()
-        val json2 = JSONObject()
-        val json3 = JSONObject()
-        json3.put("goodsType", "01")
-        json3.put("goodsCategory", "0000")
-        json3.put("referenceGoodsId", "abc001")
-        json3.put("goodsName", productName)
-        json2.put("terminalType", "APP")
-        jsonbody.put("env", json2)
-        jsonbody.put("merchantTradeNo", orderID)
-        jsonbody.put("orderAmount", price)
-        jsonbody.put("currency", "BUSD")
-        jsonbody.put("goods", json3)
-        val payload = timestamp.toString() + "\n" + none + "\n" + jsonbody.toString() + "\n";
+        val body = providesBody(productName, orderID, price)
 
-        signature = sig.getSignature(payload, key[1]).toUpperCase()
-        Log.d("body1", jsonbody.toString())
-        val result = ""
+        val signature = providesSignature(key[1], none, timestamp, body)
+        Log.d("body", body.toString())
         val finalNone = none
-        val finalSignature = signature
-        Log.d("sig:", finalSignature)
+        Log.d("sig:", signature)
         println(finalNone)
         val jsrq: JsonObjectRequest =
-            object : JsonObjectRequest(Method.POST, BASE_URL, jsonbody, { response ->
+            object : JsonObjectRequest(Method.POST, BASE_URL, body, { response ->
                 val img: String
                 try {
                     Log.d("Response", response.toString())
@@ -86,7 +69,7 @@ class BinanceConnection(private val context: Context) {
                     ha["BinancePay-Timestamp"] = java.lang.Long.toString(timestamp)
                     ha["BinancePay-Nonce"] = finalNone
                     ha["BinancePay-Certificate-SN"] = key[0]
-                    ha["BinancePay-Signature"] = finalSignature
+                    ha["BinancePay-Signature"] = signature
                     return ha
                 }
             }
@@ -94,45 +77,19 @@ class BinanceConnection(private val context: Context) {
     }
 
     @Throws(AuthFailureError::class, JSONException::class)
-    fun openApp(orderID: String?, gia: Int, productName: String?) {
+    fun openApp(orderID: String, price: Int, productName: String) {
         val url = "https://bpay.binanceapi.com/binancepay/openapi/v2/order"
-        val sig = Signature()
-        val chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         var none = ""
-        var signature = ""
-        for (i in 0..31) {
-            val chart =
-                chars[Math.round(Math.random() * (chars.length - 1)).toInt()]
-            none += chart
+        val body = providesBody(productName, orderID, price)
+        chars.forEach {_ ->
+            none+= chars[random.nextInt(31) + 1]
         }
         val timestamp = System.currentTimeMillis()
-        val body = JSONObject()
-        val terminalJson = JSONObject().apply { put("terminalType", "APP") }
-        val goodJson = JSONObject().apply {
-            put("goodsType", "01")
-            put("goodsCategory", "0000")
-            put("referenceGoodsId", "abc001")
-            put("goodsName", productName)
-        }
-        body.apply {
-            put("env", terminalJson)
-            put("merchantTradeNo", orderID)
-            put("orderAmount", Integer.toString(gia))
-            put("currency", "USDT")
-            put("goods", goodJson)
-        }
-        val payload = """
-                $timestamp
-                $none
-                $body
-                
-                """.trimIndent()
-        signature = sig.getSignature(payload, key[1]).toUpperCase()
+        val signature = providesSignature(key[1], none, timestamp, body)
         Log.d("body1", body.toString())
         val result = ""
         val finalNone = none
-        val finalSignature = signature
-        Log.d("sig:", finalSignature)
+        Log.d("final signature:", signature)
         println(finalNone)
         val objectRequestBinance: JsonObjectRequest =
             object : JsonObjectRequest(Method.POST, url, body, { response ->
@@ -158,10 +115,44 @@ class BinanceConnection(private val context: Context) {
                         it["BinancePay-Timestamp"] = timestamp.toString()
                         it["BinancePay-Nonce"] = finalNone
                         it["BinancePay-Certificate-SN"] = key[0]
-                        it["BinancePay-Signature"] = finalSignature
+                        it["BinancePay-Signature"] = signature
                     }
                 }
             }
         requestQueue.add(objectRequestBinance)
+    }
+
+    private fun providesBody(productName: String, orderID: String, price: Int): JSONObject {
+        val body = JSONObject()
+        val terminalJson = JSONObject().apply { put("terminalType", "APP") }
+        val goodJson = JSONObject().apply {
+            put("goodsType", "01")
+            put("goodsCategory", "0000")
+            put("referenceGoodsId", "abc001")
+            put("goodsName", productName)
+        }
+        return body.apply {
+            put("env", terminalJson)
+            put("merchantTradeNo", orderID)
+            put("orderAmount", price.toString())
+            put("currency", "USDT")
+            put("goods", goodJson)
+        }
+    }
+
+    private fun providesSignature(
+        key: String,
+        none: String,
+        timestamp: Long,
+        body: JSONObject
+    ): String {
+
+        val payload = """
+                $timestamp
+                $none
+                $body
+                
+                """.trimIndent()
+        return Signature().getSignature(payload, key).toUpperCase()
     }
 }
